@@ -3,7 +3,7 @@ import React from 'react';
 function Header() {
   return (
     <header style={styles.header}>
-      <h1 style={styles.title}>Я никита привет</h1>
+      <h1 style={styles.title}>Modern Website</h1>
       <nav style={styles.nav}>
         <a href="#home" style={styles.link}>Home</a>
         <a href="#about" style={styles.link}>About</a>
@@ -15,19 +15,14 @@ function Header() {
 
 function Home() {
   return (
-    <section id="home" style={styles.section}>
-      <div style={styles.content}>
-        <h2>Welcome to Our Site!</h2>
-        <p>
-          Explore the world of modern web development and discover beautiful designs, innovative ideas, and more.
+    <section id="home" style={styles.hero}>
+      <div style={styles.heroContent}>
+        <h2 style={styles.heroTitle}>Welcome to Modern Web Design</h2>
+        <p style={styles.heroText}>
+          Discover innovative designs, seamless experiences, and cutting-edge solutions.
         </p>
-        <button style={styles.button}>Get Started</button>
+        <button style={styles.heroButton}>Get Started</button>
       </div>
-      <img
-        src="https://i.pinimg.com/736x/0a/92/3e/0a923e2df63ea5731fff2e166a145ad0.jpg"
-        alt="Beautiful design"
-        style={styles.image}
-      />
     </section>
   );
 }
@@ -35,38 +30,33 @@ function Home() {
 function About() {
   return (
     <section id="about" style={styles.section}>
-      <img
-        src="https://i.pinimg.com/736x/d3/8f/43/d38f43bf8fa658b1dda2a181a907190e.jpg"
-        alt="Teamwork"
-        style={styles.image}
-      />
       <div style={styles.content}>
         <h2>About Us</h2>
         <p>
-          We are a team of passionate developers and designers dedicated to creating websites that leave a lasting impression.
+          We are passionate about creating digital experiences that captivate and engage
+          users. Our team combines creativity with functionality to deliver exceptional
+          results.
         </p>
       </div>
+      <img
+        src="https://i.pinimg.com/736x/75/f0/27/75f02778ceefa6ebdcb6c07e99bf4910.jpg"
+        alt="About Us"
+        style={styles.image}
+      />
     </section>
   );
 }
 
 function Contact() {
   return (
-    <section id="contact" style={styles.section}>
-      <div style={styles.content}>
+    <section id="contact" style={styles.contact}>
+      <div style={styles.contactContent}>
         <h2>Contact Us</h2>
-        <p>
-          Have questions or want to work with us? Reach out via{' '}
-          <a href="nik200830@gmail.com" style={styles.email}>
-            nik200830@gmail.com
-          </a>
-        </p>
+        <p>Have questions? Let's connect!</p>
+        <a href="mailto:info@example.com" style={styles.contactButton}>
+          Email Us
+        </a>
       </div>
-      <img
-        src="https://i.pinimg.com/736x/aa/0e/ad/aa0eadb6265c74ba59ac53b6c6a085ca.jpg"
-        alt="Contact"
-        style={styles.image}
-      />
     </section>
   );
 }
@@ -74,7 +64,7 @@ function Contact() {
 function Footer() {
   return (
     <footer style={styles.footer}>
-      <p>&copy; {new Date().getFullYear()} My Awesome Website. All rights reserved.</p>
+      <p>&copy; {new Date().getFullYear()} Modern Website. All rights reserved.</p>
     </footer>
   );
 }
@@ -95,22 +85,24 @@ function App() {
 
 const styles = {
   container: {
-    fontFamily: "'Arial', sans-serif",
-    lineHeight: '1.6',
-    color: '#333',
+    fontFamily: "'Roboto', sans-serif",
+    margin: 0,
+    padding: 0,
+    overflowX: 'hidden',
   },
   header: {
-    background: 'linear-gradient(90deg, #4facfe, #00f2fe)',
+    background: 'linear-gradient(90deg, #6a11cb, #2575fc)',
     padding: '20px',
     textAlign: 'center',
     position: 'sticky',
     top: 0,
     zIndex: 1000,
+    boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
   },
   title: {
     color: '#fff',
     fontSize: '2rem',
-    margin: '0',
+    margin: 0,
   },
   nav: {
     marginTop: '10px',
@@ -119,9 +111,44 @@ const styles = {
     color: '#fff',
     margin: '0 15px',
     textDecoration: 'none',
-    fontSize: '1.1rem',
+    fontSize: '1.2rem',
     fontWeight: 'bold',
     transition: 'color 0.3s',
+  },
+  hero: {
+    background: 'url("https://i.pinimg.com/736x/1f/87/4a/1f874a7fce7740124709efbfd7346ef3.jpg") no-repeat center/cover',
+    color: '#fff',
+    height: '80vh',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    textAlign: 'center',
+  },
+  heroContent: {
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    padding: '20px 30px',
+    borderRadius: '10px',
+  },
+  heroTitle: {
+    fontSize: '2.5rem',
+    margin: 0,
+  },
+  heroText: {
+    margin: '10px 0',
+    fontSize: '1.2rem',
+  },
+  heroButton: {
+    padding: '10px 20px',
+    backgroundColor: '#6a11cb',
+    color: '#fff',
+    fontSize: '1rem',
+    border: 'none',
+    borderRadius: '5px',
+    cursor: 'pointer',
+    transition: 'background 0.3s',
+  },
+  heroButtonHover: {
+    backgroundColor: '#2575fc',
   },
   section: {
     display: 'flex',
@@ -129,38 +156,43 @@ const styles = {
     alignItems: 'center',
     justifyContent: 'center',
     padding: '40px 20px',
-    textAlign: 'center',
     backgroundColor: '#f9f9f9',
-    borderRadius: '8px',
-    boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+    borderRadius: '10px',
     margin: '20px 0',
+    boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
   },
   content: {
     maxWidth: '500px',
     margin: '20px',
-  },
-  button: {
-    padding: '10px 20px',
-    fontSize: '1rem',
-    color: '#fff',
-    background: 'linear-gradient(90deg, #4facfe, #00f2fe)',
-    border: 'none',
-    borderRadius: '5px',
-    cursor: 'pointer',
-    marginTop: '10px',
-    transition: 'background 0.3s',
+    textAlign: 'left',
   },
   image: {
     maxWidth: '400px',
     width: '100%',
     borderRadius: '10px',
     boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
-    margin: '20px',
   },
-  email: {
-    color: '#4facfe',
+  contact: {
+    background: 'linear-gradient(90deg, #2575fc, #6a11cb)',
+    color: '#fff',
+    textAlign: 'center',
+    padding: '50px 20px',
+    borderRadius: '10px',
+  },
+  contactContent: {
+    maxWidth: '500px',
+    margin: '0 auto',
+  },
+  contactButton: {
+    display: 'inline-block',
+    padding: '10px 20px',
+    backgroundColor: '#fff',
+    color: '#6a11cb',
+    fontSize: '1rem',
     textDecoration: 'none',
-    fontWeight: 'bold',
+    borderRadius: '5px',
+    marginTop: '10px',
+    transition: 'background 0.3s, color 0.3s',
   },
   footer: {
     backgroundColor: '#333',
